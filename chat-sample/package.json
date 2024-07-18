@@ -15,34 +15,19 @@
 		"AI",
 		"Chat"
 	],
-	"activationEvents": [],
+	"activationEvents": ["onStartupFinished"],
 	"enabledApiProposals": [
-		"chatVariableResolver"
+    	"chatVariableResolver",
+    	"defaultChatParticipant",
+		"chatParticipantPrivate",
+		"chatParticipantAdditions"
 	],
 	"contributes": {
 		"chatParticipants": [
 			{
 				"id": "chat-sample.cat",
-				"fullName": "Cat",
 				"name": "cat",
 				"description": "Meow! What can I teach you?",
-				"isSticky": true,
-				"commands": [
-					{
-						"name": "teach",
-						"description": "Pick at random a computer science concept then explain it in purfect way of a cat"
-					},
-					{
-						"name": "play",
-						"description": "Do whatever you want, you are a cat after all"
-					}
-				]
-			}
-		],
-		"commands": [
-			{
-				"command": "cat.namesInEditor",
-				"title": "Use Cat Names in Editor"
 			}
 		]
 	},
@@ -56,7 +41,6 @@
 	"devDependencies": {
 		"@types/node": "^20.5.9",
 		"@vscode/prompt-tsx": "^0.2.3-alpha",
-		"@types/vscode": "1.90.0",
 		"@typescript-eslint/eslint-plugin": "^7.14.0",
 		"@typescript-eslint/parser": "^7.14.0",
 		"eslint": "^8.26.0",
